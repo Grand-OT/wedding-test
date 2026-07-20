@@ -44,6 +44,46 @@
       color: #7b3544;
       font-size: 24px;
     }
+
+    .location {
+      padding: 80px 20px;
+      text-align: center;
+      background: #f1e7d8;
+    }
+
+    .location h2 {
+      margin-bottom: 20px;
+      font-size: 42px;
+      font-weight: normal;
+      color: #4b2730;
+    }
+
+    .location p {
+      margin-bottom: 30px;
+      line-height: 1.7;
+      letter-spacing: normal;
+      text-transform: none;
+    }
+
+    .map {
+      width: min(100%, 900px);
+      height: 450px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 20px;
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    @media (max-width: 600px) {
+      .map {
+        height: 350px;
+      }
+    }
   </style>
 </head>
 
@@ -53,5 +93,18 @@
     <h1>Ярослав & Мария</h1>
     <div class="date">Наша свадьба</div>
   </main>
+  <section class="location">
+    <h2>Место проведения</h2>
+
+    <p>
+      Усадьба «Лесная»<br>
+      Московская область, адрес мероприятия
+    </p>
+
+    <div class="map">
+      <!-- Сюда вставьте iframe, скопированный из Яндекс Карт -->
+      <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A764e84097c859f8622879c2ecdfd9a6ad69060cec67fc906b3d503874808d2a5&amp;source=constructor" width="500" height="400" frameborder="0"></iframe>
+    </div>
+  </section>
 </body>
 </html>
