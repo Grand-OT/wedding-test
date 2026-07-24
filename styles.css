@@ -206,9 +206,12 @@ footer p { font-size: 12px; letter-spacing: .17em; text-transform: uppercase; }
   .dress { grid-template-columns: 1fr; }
   .dress__photo { min-height: 540px; }
   .dress__content { padding: 82px 28px; }
-  .swatches { display: grid; grid-template-columns: repeat(3, minmax(100px, 1fr)); column-gap: 12px; row-gap: 68px; margin: 44px 0 42px; }
-  .swatches span { width: 43px; height: 43px; justify-self: center; }
-  .swatches b { top: 56px; font-size: 11px; }
+  .swatches { display: grid; grid-template-columns: repeat(6, 1fr); column-gap: 12px; row-gap: 68px; margin: 44px 0 42px; }
+  .swatches span { width: 60px; height: 60px; justify-self: center; }
+  .swatches span:nth-child(-n+3) { grid-column: span 2; }
+  .swatches span:nth-child(4) { grid-column: 2 / span 2; }
+  .swatches span:nth-child(5) { grid-column: 4 / span 2; }
+  .swatches b { top: 62px; font-size: 11px; }
   .wishes::before, .wishes::after { display: none; }
   .guest-form { grid-template-columns: 1fr; gap: 28px; }
   .form-field--full { grid-column: auto; }
@@ -224,7 +227,7 @@ footer p { font-size: 12px; letter-spacing: .17em; text-transform: uppercase; }
   .gallery__grid { display: block; }
   .gallery__item { height: 300px; margin-bottom: 10px; }
   .gallery__item--portrait { height: 410px; }
-  .swatches { display: grid; grid-template-columns: repeat(2, minmax(110px, 1fr)); column-gap: 14px; row-gap: 68px; margin: 44px 0 42px; }
+  .swatches { column-gap: 8px; }
   .swatches span { justify-self: center; }
   .swatches b { top: 56px; font-size: 11px; white-space: nowrap; }
   .choice-grid { display: grid; grid-template-columns: 1fr; }
