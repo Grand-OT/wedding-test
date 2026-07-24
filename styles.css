@@ -211,7 +211,7 @@ footer p { font-size: 12px; letter-spacing: .17em; text-transform: uppercase; }
   .swatches span:nth-child(-n+3) { grid-column: span 2; }
   .swatches span:nth-child(4) { grid-column: 2 / span 2; }
   .swatches span:nth-child(5) { grid-column: 4 / span 2; }
-  .swatches b { top: 70px; font-size: 11px; }
+  .swatches b { top: 65px; font-size: 11px; }
   .wishes::before, .wishes::after { display: none; }
   .guest-form { grid-template-columns: 1fr; gap: 28px; }
   .form-field--full { grid-column: auto; }
@@ -229,7 +229,7 @@ footer p { font-size: 12px; letter-spacing: .17em; text-transform: uppercase; }
   .gallery__item--portrait { height: 410px; }
   .swatches { column-gap: 8px; }
   .swatches span { justify-self: center; }
-  .swatches b { top: 70px; font-size: 11px; white-space: nowrap; }
+  .swatches b { top: 60px; font-size: 11px; white-space: nowrap; }
   .choice-grid { display: grid; grid-template-columns: 1fr; }
   .choice-grid--two { grid-template-columns: 1fr 1fr; }
 }
