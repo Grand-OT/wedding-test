@@ -229,7 +229,7 @@ footer p { font-size: 12px; letter-spacing: .17em; text-transform: uppercase; }
   .gallery__item--portrait { height: 410px; }
   .swatches { column-gap: 8px; }
   .swatches span { justify-self: center; }
-  .swatches b { top: 56px; font-size: 11px; white-space: nowrap; }
+  .swatches b { top: 70px; font-size: 11px; white-space: nowrap; }
   .choice-grid { display: grid; grid-template-columns: 1fr; }
   .choice-grid--two { grid-template-columns: 1fr 1fr; }
 }
