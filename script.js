@@ -2,7 +2,7 @@
 const WEDDING_DATE = "2026-10-03T16:00:00+07:00";
 
 // Вставьте сюда URL развертывания Google Apps Script, заканчивающийся на /exec.
-const APPS_SCRIPT_URL = "";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyj2XozDZ-YGR_8Ieq6lb0tchrEdBBbYUEyPWznzTFVLUCfsrkvxFdIP7453hIut0I4/exec";
 
 const revealElements = document.querySelectorAll(".reveal");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -117,6 +117,35 @@ if (WEDDING_DATE) {
 
 const form = document.querySelector("#guest-form");
 const formStatus = document.querySelector("#form-status");
+const transferRadios = form?.querySelectorAll('input[name="transfer"]');
+const transferPointWrap = form?.querySelector("#transfer-point-wrap");
+const transferPointSelect = form?.querySelector("#transfer-point");
+const transferPointError = form?.querySelector("#transfer-point-error");
+
+function syncTransferPoint() {
+  if (!form || !transferPointWrap || !transferPointSelect) return;
+
+  const selectedTransfer = form.querySelector('input[name="transfer"]:checked');
+  const needsTransfer = selectedTransfer?.value === "Да";
+
+  transferPointWrap.hidden = !needsTransfer;
+  transferPointSelect.disabled = !needsTransfer;
+  transferPointSelect.removeAttribute("aria-invalid");
+
+  if (!needsTransfer) {
+    transferPointSelect.value = "";
+  }
+
+  if (transferPointError) {
+    transferPointError.textContent = "";
+  }
+}
+
+transferRadios?.forEach((radio) => {
+  radio.addEventListener("change", syncTransferPoint);
+});
+
+syncTransferPoint();
 
 form?.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -129,11 +158,20 @@ form?.addEventListener("submit", async (event) => {
   nameInput.removeAttribute("aria-invalid");
   formStatus.className = "form-status";
   formStatus.textContent = "";
+  transferPointError.textContent = "";
+  transferPointSelect.removeAttribute("aria-invalid");
 
   if (!nameInput.value.trim()) {
     nameInput.setAttribute("aria-invalid", "true");
     error.textContent = "Пожалуйста, напишите ваше имя.";
     nameInput.focus();
+    return;
+  }
+
+  if (formData.get("transfer") === "Да" && !formData.get("transferPoint")) {
+    transferPointSelect.setAttribute("aria-invalid", "true");
+    transferPointError.textContent = "Пожалуйста, выберите точку отправления.";
+    transferPointSelect.focus();
     return;
   }
 
@@ -157,6 +195,7 @@ form?.addEventListener("submit", async (event) => {
   try {
     await fetch(APPS_SCRIPT_URL, { method: "POST", body: formData, mode: "no-cors" });
     form.reset();
+    syncTransferPoint();
     formStatus.classList.add("is-success");
     formStatus.textContent = "Спасибо! Ваш ответ получен. До встречи на нашей свадьбе!";
   } catch (error) {
