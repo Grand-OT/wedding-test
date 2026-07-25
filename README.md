@@ -18,7 +18,7 @@ python -m http.server 8000
 
 В `index.html`:
 
-- добавьте `image_iglu.png` и `image_more.png` в папку `assets`, если этих файлов ещё нет;
+- добавьте `image_iglu.webp` и `image_more.png` в папку `assets`, если этих файлов ещё нет;
 - при необходимости замените изображения и подписи галереи;
 - текстовые пожелания, если потребуется.
 
@@ -79,9 +79,9 @@ autumn-wedding-invitation/
     │   ├── inter-latin-wght-normal.woff2
     │   └── INTER-LICENSE.txt
     ├── couple-autumn.png
-    ├── botanical-hero.png
-    ├── image.png
-    ├── image_iglu.png
+    ├── botanical-hero.webp
+    ├── image.webp
+    ├── image_iglu.webp
     ├── image_more.png
-    └── table-autumn.png
+    └── table-autumn.webp
 ```

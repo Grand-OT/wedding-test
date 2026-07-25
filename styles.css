@@ -41,7 +41,7 @@ a { color: inherit; }
 .noise { position: fixed; inset: 0; z-index: 20; pointer-events: none; opacity: .045; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E"); }
 
 .hero { min-height: 100svh; position: relative; color: var(--ink); overflow: hidden; background: var(--paper); }
-.hero__image { position: absolute; inset: 0; background: url("assets/botanical-hero.png") center/cover no-repeat; }
+.hero__image { position: absolute; inset: 0; background: url("assets/botanical-hero.webp") center/cover no-repeat; }
 .hero__shade { position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(255,250,242,.8) 0%, rgba(255,250,242,.55) 38%, rgba(255,250,242,.08) 72%); }
 .nav { position: absolute; z-index: 3; top: 0; left: 0; width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 28px 4vw; color: var(--ink); background: linear-gradient(to bottom, rgba(244,237,226,.68), rgba(244,237,226,.28)); border-bottom: 1px solid rgba(57,47,41,.1); text-shadow: 0 1px 8px rgba(255,250,242,.75); }
 .monogram { font-family: var(--display); font-size: 22px; font-weight: 300; text-decoration: none; letter-spacing: .08em; }
@@ -75,7 +75,7 @@ h2 { margin: 0; font: 300 clamp(40px, 5.6vw, 74px)/1.08 var(--display); letter-s
 .detail-grid { max-width: 1280px; margin: auto; display: grid; grid-template-columns: 1fr 1.06fr 1fr; min-height: 520px; }
 .detail-card { position: relative; padding: 56px 46px; border: 1px solid var(--line); display: flex; flex-direction: column; justify-content: flex-end; }
 .detail-card + .detail-card { border-left: 0; }
-.detail-card--image { background: linear-gradient(rgba(255,250,242,.04), rgba(72,25,35,.04)), url("assets/hall_view.png") center/cover no-repeat; }
+.detail-card--image { background: linear-gradient(rgba(255,250,242,.04), rgba(72,25,35,.04)), url("assets/hall_view.webp") center/cover no-repeat; }
 .detail-card__number { position: absolute; top: 26px; right: 30px; color: rgba(72,25,35,.3); font: 300 27px var(--display); }
 .detail-card__kicker { color: var(--wine); margin: 0 0 16px; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; }
 .detail-card h3 { margin: 0 0 18px; font: 400 30px/1.2 var(--display); letter-spacing: -.025em; }
@@ -93,7 +93,7 @@ h2 { margin: 0; font: 300 clamp(40px, 5.6vw, 74px)/1.08 var(--display); letter-s
 .countdown__today { grid-column: 1/-1; font: 300 34px var(--display); color: var(--wine); }
 
 .quote-photo { height: min(84vh, 900px); position: relative; overflow: hidden; display: grid; place-items: center; color: white; text-align: center; }
-.quote-photo__image { position: absolute; inset: -9% 0; background: linear-gradient(rgba(47,21,17,.38), rgba(47,21,17,.52)), url("assets/table-autumn.png") center/cover no-repeat; will-change: transform; }
+.quote-photo__image { position: absolute; inset: -9% 0; background: linear-gradient(rgba(47,21,17,.38), rgba(47,21,17,.52)), url("assets/table-autumn.webp") center/cover no-repeat; will-change: transform; }
 .quote-photo blockquote { position: relative; margin: 0; z-index: 1; font: 300 clamp(32px, 5.2vw, 68px)/1.25 var(--display); letter-spacing: -.035em; text-shadow: 0 2px 20px rgba(0,0,0,.25); }
 
 .program { max-width: 1100px; margin: auto; }
